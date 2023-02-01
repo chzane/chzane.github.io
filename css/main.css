@@ -1,0 +1,82 @@
+@charset "UTF-8";
+body,h1,h2,h3,h4,h5,h6,p ,ul,ol,dd,table,input,textarea,dl{
+    padding: 0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: top;
+    border: 0;
+}
+ul,li{
+    list-style: none;
+}
+input:focus,textarea:focus,select:focus{
+    outline: none;
+}
+textarea{
+    resize:none;
+}
+.cl:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.cl{
+    zoom:1;
+}
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.centerimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ov {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.nav{
+    position: absolute;
+    background-color: #161515;
+    width: 100%;
+    height: 90px;
+    font-size: 25px;
+    color: #FFF;
+}
+.nav .title_word{
+    position: absolute;
+    padding: 25px 400px;
+}
+.nav .opi_word{
+    position: absolute;
+    padding: 23px 522px;
+}
+.nav .title{
+    font-weight: 900;
+    color: #cbc7c7;
+}
+.nav a{
+    font-size: 15px;
+    color: #cbc7c7;
+}
+.nav a:hover{
+    color: #ffffff;
+}

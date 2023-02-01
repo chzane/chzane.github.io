@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>编辑器扩展</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" type="text/css" href="/css/soui/soui.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+    </head>
+    <body>
+        <style>
+            .copy_btn{
+                background-color: #0080ffc7;
+                padding: 5px 25px;
+                color: #FFF;
+                border-radius: 10px;
+                border-style: none;
+            }
+        </style>
+        <div class="nav">
+            <div class="title_word">
+                <span class="title">Halocer</span>
+            </div>
+            <div class="opi_word">
+                <a href="./editor/">创作</a>
+            </div>
+        </div>
+        <noscript><div style="position: fixed; width: 100%; height: 100%; background-color: rgba(207, 30, 30, 0.606); color: #FFF; text-align: center; padding: 300px 0;"><noscript style="font-size: 30px; font-weight: 900;">请启用javascript来确保网页正常运行</noscript></div></noscript>
+        <div style="text-align: center; margin-top: 100px;">
+            <h1>TurboWarp 编辑器扩展合集</h1>
+            <p>为了更好地创作作品，我们整理并部分翻译了适合TurboWarp的扩展，您可以直接将他插入在作品内，并且支持播放。</p>
+            <p>这些扩展我们已经经过检测，没有发现可疑内容；并且部分做了中文翻译。</p><br>
+            <span style="background-color: rgba(207, 30, 30, 0.606); color: #FFF; padding: 10px 20px; border-radius: 10px;">提示：但是我们希望您还是能够在作品说明中加入您使用的扩展。</span><br><br>
+            <img src="./Physics.png" style="height: 260px; border-style: solid; border-width: 2px; border-color: #169fb0; border-radius: 10px;"/><br><button class="copy_btn" data-copy="https://extensions.turbowarp.org/box2d.js">复制链接</button><br><br>
+            <img src="./Stretch.png" style="height: 260px; border-style: solid; border-width: 2px; border-color: #b01515; border-radius: 10px;"/><br><button class="copy_btn" data-copy="https://extensions.turbowarp.org/stretch.js">复制链接</button><br><br>
+            <img src="./Files.png" style="height: 260px; border-style: solid; border-width: 2px; border-color: #8711b0; border-radius: 10px;"/><br><button class="copy_btn" data-copy="https://extensions.turbowarp.org/files.js">复制链接</button><br><br>
+        </div>
+        <script>
+            document.addEventListener('click', function (e) {
+                var toCopy = e.target.getAttribute('data-copy');
+                if (toCopy) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(toCopy);
+                } else {
+                    var input = document.createElement('input');
+                    input.value = toCopy;
+                    input.style.top = '0';
+                    input.style.left = '0';
+                    input.style.position = 'fixed';
+                    document.body.appendChild(input);
+                    input.focus();
+                    input.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('复制成功！')
+                    } catch (e) {
+                        console.error(e);
+                    }
+                    document.body.removeChild(input);
+                    e.target.focus();
+                }
+                }
+            });
+        </script>
+    </body>
+</html>

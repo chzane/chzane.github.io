@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <html >
+  <head>
+      <meta charset="UTF-8">
+      <title>创建新的账号 | Halocer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <link rel="stylesheet" type="text/css" href="/css/soui/soui.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="title_word">
+        <span class="title">Halocer</span>
+      </div>
+      <div class="opi_word">
+          <a href="/editor/">创作</a>
+          <a href="/app.html">APP</a>
+      </div>
+    </div>
+    <div class="login_bg">
+      <div class="login">
+            <h2>创建新的账号</h2>
+            <span class="name">电子邮箱：</span><br>
+            <input type="text" name="name" id="name" class="soui-input" style="width: 50%;"/> <br>
+            <span class="name">账号密码：</span><br>
+            <input type="text" name="psw" id="psw" class="soui-input" style="width: 50%;"/> <br>
+            <span class="name">确认您的账号密码：</span><br>
+            <input type="text" name="pswt" id="pswt" class="soui-input" style="width: 50%;"/> <br>
+            <span class="name">昵称：</span><br>
+            <input type="text" name="pswt" id="pswt" class="soui-input" title="默认为电子邮箱" placeholder="默认为电子邮箱" style="width: 50%;"/> <br>
+            <br>
+            <a href="/login/">已有账号？点我登录</a>  <a href="//wpa.qq.com/msgrd?v=3&amp;uin=986686113&amp;site=qq&amp;menu=yes" target="_blank" data-report="11589" style="margin-left: 2%;">注册遇到困难？ <img src="//pub.idqqimg.com/wpa/images/gdt/consult.jpg" alt="欢迎在线咨询“QQ推广客服”，在线时间为工作日9点-17点。" title="欢迎在线咨询“QQ推广客服”，在线时间为工作日9点-17点。"></a><br>
+            <button onclick="reg()" type="submit" class="soui-btn soui-sm-btn" style="width: 53.2%;">确认</button><br>
+      </div>
+    </div>
+    <script>
+      function reg(){
+        var name = document.getElementById('name').value;
+        var psw = document.getElementById('psw').value;
+        var pswt = document.getElementById('pswt').value;
+        if (name == '' && psw == '' && pswt == ''){
+          alert('请输入电子邮箱和账号密码！');
+        }else if(name == ''){
+          alert('请输入电子邮箱！');
+        }else if(psw == ''){
+          alert('请输入密码！');
+        }else if(psw != pswt){
+          alert('两次输入的密码不一致！')
+        }else{
+          location.href='/api/register.html?name=' + name + '&psw=' + psw;
+        }
+      }
+    </script>
+ </body>
+ </html>

@@ -2,41 +2,100 @@
     按钮样式库
 */
 :root{
-    --bgColor: #e9e7ef; /* 按钮背景色 */
-    --defaultColor: #000000; /* 默认按钮颜色 */
+    --bgcolor: #e9d7df;
+    --defaultColor: #007bff; /* 默认按钮颜色 */
     --correctColor: #0c8918; /* 正确按钮颜色 */
     --errorColor: #c3272b; /* 错误按钮颜色 */
+    --warningColor: #ff9900;
     --tipColor: #177cb0; /* 提示按钮颜色 */
 }
 .soui-btn{
-    background-color: var(--bgColor);
+    background-color: var(--defaultColor);
     border: none;
     border-radius: 6px;
-    color: var(--defaultColor);
+    color: #FFF;
     padding: 9px 30px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 900;
 }
-
 .soui-correct-btn{
-    color: var(--correctColor);
+    background-color: var(--correctColor);
+    color: #FFF;
 }
 .soui-error-btn{
-    color: var(--errorColor);
+    background-color: var(--errorColor);
+    color: #FFF;
+}
+.soui-warning-btn{
+    background-color: var(--warningColor);
+    color: #FFF;
 }
 .soui-tip-btn{
-    color: var(--tipColor);
+    background-color: var(--tipColor);
+    color: #FFF;
 }
+
+.soui-outline-btn{
+    background-color: #00000000;
+    border-style: solid;
+    border-color: var(--defaultColor);
+    color: var(--defaultColor);
+    border-width: 1px;
+}
+.soui-outline-correct-btn{
+    background-color: #00000000;
+    border-style: solid;
+    border-color: var(--correctColor);
+    color: var(--correctColor);
+    border-width: 1px;
+}
+.soui-outline-error-btn{
+    background-color: #00000000;
+    border-style: solid;
+    border-color: var(--errorColor);
+    color: var(--errorColor);
+    border-width: 1px;
+}
+.soui-outline-warning-btn{
+    background-color: #00000000;
+    border-style: solid;
+    border-color: var(--warningColor);
+    color: var(--warningColor);
+    border-width: 1px;
+}
+.soui-outline-tip-btn{
+    background-color: #00000000;
+    border-style: solid;
+    border-color: var(--tipColor);
+    color: var(--tipColor);
+    border-width: 1px;
+}
+
 .soui-left-btn{
     float: left;
 }
 .soui-right-btn{
     float: right;
 }
+
+.soui-block-btn{
+    display: block;
+    width: 100%;
+}
+
+.soui-lg-btn{
+    padding: 12px 33px;
+    font-size: 15px;
+}
+.soui-sm-btn{
+    padding: 6px 27px;
+    font-size: 9px;
+}
+
 .soui-noclick-btn{
     cursor: not-allowed;
 }

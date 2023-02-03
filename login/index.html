@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html >
+  <head>
+      <meta charset="UTF-8">
+      <title>登录 | Halocer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <link rel="stylesheet" type="text/css" href="/css/soui/soui.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="title_word">
+        <span class="title">Halocer</span>
+      </div>
+      <div class="opi_word">
+          <a href="/editor/">创作</a>
+          <a href="/app.html">APP</a>
+      </div>
+    </div>
+    <div class="login_bg">
+      <div class="login">
+            <h2>登录</h2>
+            <span style="font-size: 10px; line-height: 0px;">提示：由于github.io属于静态网站托管，无法部署nodejs文件，导致<br>登录时无法打开使用了端口的api，目前的解决方法是使用html文件嵌入js，效果<br>可能与实际不符，请谅解！</span> <br>
+            <span class="name">昵称 / 电子邮箱：</span><br>
+            <input type="text" name="name" id="name" class="soui-input" style="width: 50%;"/> <br>
+            <span class="name">账号密码：</span><br>
+            <input type="text" name="psw" id="psw" class="soui-input" style="width: 50%;"/> <br>
+            <br>
+            <a href="/register/">没有账号？点我注册</a><br>
+            <input onclick="login()" type="submit" class="soui-btn soui-sm-btn" style="width: 53.2%;">
+            <div class="login_app right">
+              <span>使用solariix APP扫码登录</span><br>
+              <img src="https://api.pwmqr.com/qrcode/create/?url=254078986724">
+            </div>
+      </div>
+    </div>
+    <script>
+      function login(){
+        var name = document.getElementById('name').value;
+        var psw = document.getElementById('psw').value;
+        if (name == '' && psw == ''){
+          alert('请输入昵称/邮箱和密码！');
+        }else if (name == ''){
+          alert('请输入昵称/电子邮箱！');
+        }else if (psw == ''){
+          alert('请输入密码！')
+        }else{
+          location.href='/api/login.html?name=' + name + '&psw=' + psw;
+        }
+      }
+    </script>
+ </body>
+ </html>

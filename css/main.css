@@ -119,6 +119,9 @@ body{
 .login_app img{
     width: 100%;
 }
+.register{
+    margin-top: 125px;
+}
 
 .search{
     position: fixed;

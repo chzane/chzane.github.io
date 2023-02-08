@@ -1,3 +1,4 @@
+<script src="/js/app.js"></script>
 <script>
 function getQueryString(name) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -9,6 +10,7 @@ function getQueryString(name) {
  }
  var name = getQueryString('name');
  var psw = getQueryString('psw');
+ sessionStorage.removeItem("username");
+ sessionStorage.setItem("username",name);
  location.href='/';
-
 </script>

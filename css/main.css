@@ -33,6 +33,7 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
+    background: url("/img/000001.jpg");
 }
 .left{
     float: left;
@@ -50,11 +51,13 @@ body{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .nav{
     position: absolute;
     background-color: #161515;
     width: 100%;
     height: 90px;
+    top: 25px;
     font-size: 25px;
     color: #FFF;
 }
@@ -86,12 +89,8 @@ body{
     border-style: none;
     margin-right: 20px;
 }
-.login_bg{
-    background: url("/img/000001.jpg");
-    width: 100%;
-    height: 100%;
-}
-.login_bg h2{
+
+.login h2{
     margin-bottom: 20px;
     color: #FFF;
     font-weight: 100;
@@ -99,7 +98,7 @@ body{
 .login{
     background-color: #181a21;
     padding: 20px;
-    margin: 20%;
+    margin: 10% 20%;
     color: #1999ff;
     font-size: 17px;
     font-weight: 900;
@@ -119,4 +118,32 @@ body{
 }
 .login_app img{
     width: 100%;
+}
+
+.search{
+    position: fixed;
+    background-color: #161515;
+    width: 230px;
+    height: 70%;
+    margin: 5%;
+    padding: 10px;
+    margin-top: 140px;
+    color: #FFF;
+}
+.search .title{
+    font-weight: 100;
+    font-size: 18px;
+}
+.search input{
+    width: 100%;
+    height: 30px;
+    color: #FFF;
+    background-color: #145183;
+    border-radius: 5px;
+    border: none;
+}
+.search .soui-btn{
+    margin-top: -30px;
+    float: right;
+    position: relative;
 }

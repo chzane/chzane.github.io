@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-  <html >
+<html>
   <head>
-      <meta charset="UTF-8">
-      <title>创建新的账号 | Halocer</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="" />
-      <meta name="keywords" content="" />
-      <link rel="stylesheet" type="text/css" href="/css/soui/soui.min.css">
-      <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <meta charset="UTF-8" />
+    <title>创建新的账号 | Halocer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="/css/soui/soui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
   </head>
   <body>
+    <div style="width: 100%; height: 25px; background-color: #000;">
+      <span style="color: #FFF; font-size: 10px;">开发者模式&nbsp;&nbsp;</span><button onclick="sessionStorage.clear();">清空页面Cookie</button><button onclick="sessionStorage.setItem('username','986686113@qq.com');location.href = '/'">管理者账号登录</button>
+    </div>
     <div class="nav">
       <div class="title_word">
         <span class="title">Halocer</span>
       </div>
       <div class="opi_word">
-          <a href="/editor/">创作</a>
-          <a href="/app.html">APP</a>
+        <a href="/editor/">创作</a>
+        <a href="/app.html">APP</a>
+        <button class="right" onclick="location.href='/register';">注册</button>
+        <button class="right" onclick="location.href='/login';">登录</button>
       </div>
     </div>
-    <div class="login_bg">
-      <div class="login">
-            <h2>创建新的账号</h2>
-            <span class="name">电子邮箱：</span><br>
-            <input type="text" name="name" id="name" class="soui-input" style="width: 50%;"/> <br>
-            <span class="name">账号密码：</span><br>
-            <input type="text" name="psw" id="psw" class="soui-input" style="width: 50%;"/> <br>
-            <span class="name">确认您的账号密码：</span><br>
-            <input type="text" name="pswt" id="pswt" class="soui-input" style="width: 50%;"/> <br><br>
-            <!--<span class="name">昵称：</span><br>
-            <input type="text" name="pswt" id="pswt" class="soui-input" title="默认为电子邮箱" placeholder="默认为电子邮箱" style="width: 50%;"/> <br>-->
-            <iframe title="reCAPTCHA" src="https://recaptcha.net/recaptcha/enterprise/anchor?ar=1&amp;k=6Lf5dNUZAAAAAJaoXYG1-L78zfEzU8-r87678jxv&amp;co=aHR0cHM6Ly9zdG9yZS5zdGVhbWNoaW5hLmNvbTo0NDM.&amp;hl=zh-CN&amp;v=gEr-ODersURoIfof1hiDm7R5&amp;theme=dark&amp;size=normal&amp;s=Yuf5xLkaoutOacYenxFuYuZcm_T1-8zstDrUdVD-M9SIvIwYpQMxOmSTkhFRjgUPW1WQYp4XMO7Gob3pVVhIsRUMGA08A9iHC8nON4LLRyhsGmN_xe1ntc2UPHAJD-fUL3g_NSdRFIn1s2sS1FokWBZEihgkv3Dy7ykAf4s78tpvgUxQp-zHVZkwjwKtiGRgayRhhs4uIKzgWJGudEiLhNmhrbdZiV4bSbBGsUiT9hPL3qDFGCb6x8K9JZarIQaYHj3A1TBM6sokXiNVMA&amp;cb=psaks51uqhcm" width="304" height="78" role="presentation" name="a-gtupphcofhvk" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe> <br><br>
-            <a href="/login/">已有账号？点我登录</a>  <a href="//wpa.qq.com/msgrd?v=3&amp;uin=986686113&amp;site=qq&amp;menu=yes" target="_blank" data-report="11589" style="margin-left: 2%;">注册遇到困难？ <img src="//pub.idqqimg.com/wpa/images/gdt/consult.jpg" alt="欢迎在线咨询“QQ推广客服”，在线时间为工作日9点-17点。" title="欢迎在线咨询“QQ推广客服”，在线时间为工作日9点-17点。"></a><br>
-            <button onclick="reg()" type="submit" class="soui-btn soui-sm-btn" style="width: 53.2%;">确认</button><br>
-      </div>
+    <div class="login">
+      <h2>创建新的账号</h2>
+      <span class="name">电子邮箱：</span><br />
+      <input type="text" name="name" id="name" class="soui-input" style="width: 50%"/>
+      <br />
+      <span class="name">账号密码：</span><br />
+      <input type="text" name="psw" id="psw" class="soui-input" style="width: 50%"/>
+      <br />
+      <span class="name">确认您的账号密码：</span><br />
+      <input type="text" name="pswt" id="pswt" class="soui-input"style="width: 50%"/>
+      <br /><br />
+      <iframe title="CAPTCHA" src="/drag.html" style="height: 61px; width: 315px; overflow: hidden" frameborder="0"></iframe>
+      <br />
+      <span style="color: red; font-weight: 400; font-size: 15px;" id="error"></span>
+      <br />
+      <a href="/login/">已有账号？点我登录</a><br />
+      <button onclick="reg()" type="submit" class="soui-btn soui-sm-btn" style="width: 53.2%">确认</button><br />
     </div>
     <script>
-      function reg(){
-        var name = document.getElementById('name').value;
-        var psw = document.getElementById('psw').value;
-        var pswt = document.getElementById('pswt').value;
-        if (name == '' && psw == '' && pswt == ''){
-          alert('请输入电子邮箱和账号密码！');
-        }else if(name == ''){
-          alert('请输入电子邮箱！');
-        }else if(psw == ''){
-          alert('请输入密码！');
-        }else if(psw != pswt){
-          alert('两次输入的密码不一致！')
-        }else{
-          location.href='/api/register0.html?name=' + name + '&psw=' + psw;
+      function reg() {
+        var name = document.getElementById("name").value;
+        var psw = document.getElementById("psw").value;
+        var pswt = document.getElementById("pswt").value;
+        if (name == "" && psw == "" && pswt == "") {
+          document.getElementById("error").innerHTML="请输入电子邮箱和账号密码！";
+        } else if (name == "") {
+          document.getElementById("error").innerHTML="请输入电子邮箱！";
+        } else if (psw == "") {
+          document.getElementById("error").innerHTML="请输入密码！";
+        } else if (psw != pswt) {
+          document.getElementById("error").innerHTML="两次输入的密码不一致！";
+        } else {
+          if (sessionStorage.getItem("dragOK") == "y")
+          {
+            location.href = "/api/register.html?name=" + name + "&psw=" + psw;
+          }else{
+            document.getElementById("error").innerHTML="请完成验证码！";
+          }
         }
       }
     </script>
- </body>
- </html>
+  </body>
+</html>

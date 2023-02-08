@@ -6,10 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
+        <script src="/js/app.js"></script>
         <link rel="stylesheet" type="text/css" href="./css/soui/soui.min.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
     </head>
     <body>
+        <div style="width: 100%; height: 25px; background-color: #000;">
+            <span style="color: #FFF; font-size: 10px;">开发者模式&nbsp;&nbsp;</span><button onclick="sessionStorage.clear();">清空页面Cookie</button><button onclick="sessionStorage.setItem('username','986686113@qq.com');location.href = '/'">管理者账号登录</button>
+        </div>
         <div class="nav">
             <div class="title_word">
                 <span class="title">Halocer</span>
@@ -21,5 +25,17 @@
                 <button class="right" onclick="location.href='/login';">登录</button>
             </div>
         </div>
+        <div class="left search">
+            <input placeholder="在这里搜索"><button class="soui-btn soui-sm-btn">搜索</button><br />
+            <span class="title" id="user_lab"> <em>欢迎登录！</em><span id="user_name"></span><br />
+        </div>
     </body>
+    <script>
+        if (sessionStorage.getItem("username") == null){
+            document.getElementById("user_lab").innerHTML="您还没有登录，点此处<a href='/login' style='color: #FFF'><em>登录</em></a> 或 <a href='/register' style='color: #FFF'><em>注册</em></a>";
+        }else{
+            document.getElementById("user_name").innerHTML=sessionStorage.getItem("username");
+            console.log(sessionStorage.getItem("username"));
+        }
+    </script>
 </html>
